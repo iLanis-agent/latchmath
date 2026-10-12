@@ -16,7 +16,7 @@ for (const c of cases) {
   }
   eq(r.error, undefined, c.fn + c.args + " no-error");
   for (const k of Object.keys(want)) eq(r[k], want[k], c.fn + c.args + " " + k);
-  const renderFn = { gatePlan: "renderGate", latchPlan: "renderLatch", hingePlan: "renderHinge" }[c.fn];
+  const renderFn = { gatePlan: "renderGate", hingePlan: "renderHinge" }[c.fn];
   eq(E[renderFn](r, ...c.args), c.render, c.fn + c.args + " render");
   eq(typeof E[renderFn](r, ...c.args), "string", c.fn + c.args + " render-type");
 }
