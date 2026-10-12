@@ -10,7 +10,9 @@
   body { margin: 0; font-family: Georgia, 'Times New Roman', serif; background: #f8f8f2; color: #2b2b24; line-height: 1.55; }
   main { max-width: 1100px; margin: 0 auto; padding: 40px 20px 64px; }
   h1 { font-size: 2rem; margin: 0 0 8px; color: var(--accent); }
-  .lede { margin: 0 0 28px; max-width: 640px; }
+  .lede { margin: 0 0 20px; max-width: 640px; }
+  .boundary { background: #fff; border: 2px solid var(--accent); border-radius: 8px; padding: 14px 18px; margin: 0 0 28px; max-width: 900px; font-size: 1rem; }
+  .boundary strong { color: var(--accent); }
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
   section { background: #fff; border: 1px solid #e0e0cc; border-radius: 8px; padding: 20px 22px; }
   h2 { font-size: 1.15rem; margin: 0 0 6px; }
@@ -28,32 +30,23 @@
 <body>
 <main>
   <h1>Latch math</h1>
-  <p class="lede">The opening becomes a gate, the gate becomes hinges, and the latch lands above small hands. Exact arithmetic, every borrowed number labeled.</p>
+  <p class="lede">The opening becomes a clear span and the weight becomes hinge arithmetic. Exact arithmetic, every borrowed number labeled.</p>
+  <div class="boundary"><strong>Boundary:</strong> these tools cannot certify a child, pool or stair gate, and they cannot choose safety hardware. Every figure here is illustrative labeled arithmetic. Certified hardware, the manufacturer's requirements and your local codes govern any real gate - when safety is on the line, check with a licensed professional.</div>
   <div class="grid">
     <section>
       <h2>Gate plan</h2>
-      <p class="hint">The opening sizes the panels.</p>
+      <p class="hint">The opening becomes a span.</p>
       <label for="g-o">Opening width (cm)</label>
       <input id="g-o" type="number" value="94" min="0" step="1">
-      <button id="g-go">Size the gate</button>
+      <button id="g-go">Size the span</button>
       <div class="out" id="g-out"></div>
     </section>
     <section>
-      <h2>Latch plan</h2>
-      <p class="hint">Small hands set the height.</p>
-      <label for="l-c">Child height (cm)</label>
-      <input id="l-c" type="number" value="110" min="0" step="1">
-      <label for="l-h">Latch height (cm)</label>
-      <input id="l-h" type="number" value="160" min="0" step="1">
-      <button id="l-go">Check the reach</button>
-      <div class="out" id="l-out"></div>
-    </section>
-    <section>
-      <h2>Hinge plan</h2>
-      <p class="hint">The weight picks the hardware.</p>
+      <h2>Hinge arithmetic</h2>
+      <p class="hint">A labeled weight division.</p>
       <label for="h-w">Gate weight (kg)</label>
       <input id="h-w" type="number" value="15" min="0" step="1">
-      <button id="h-go">Hang the gate</button>
+      <button id="h-go">Run the division</button>
       <div class="out" id="h-out"></div>
     </section>
   </div>
@@ -70,10 +63,6 @@ function show(id, r, render){
 document.getElementById('g-go').addEventListener('click', function(){
   var a=[num('g-o')];
   show('g-out', LatchMath.gatePlan.apply(null,a), function(r){ return LatchMath.renderGate.apply(null,[r].concat(a)); });
-});
-document.getElementById('l-go').addEventListener('click', function(){
-  var a=[num('l-c'),num('l-h')];
-  show('l-out', LatchMath.latchPlan.apply(null,a), function(r){ return LatchMath.renderLatch.apply(null,[r].concat(a)); });
 });
 document.getElementById('h-go').addEventListener('click', function(){
   var a=[num('h-w')];
